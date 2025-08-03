@@ -1,4 +1,5 @@
 # .github/workflows/dbt-ci.yml
+# Secret updated in github
 name: dbt CI
 
 on:
