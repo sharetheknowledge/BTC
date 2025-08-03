@@ -16,4 +16,22 @@ models:
 
 
 
+exposures:
+
+  - name: btc_whale_alert_exposure
+    label: BTC Whale alert
+    type: dashboard
+    maturity: high
+    url: https://lookerstudio.google.com/reporting/1e6cd860-9716-4179-8cd1-2be00c1db0c0
+    description: >
+      BTC Whale alert transactions report"?
+
+    depends_on:
+      - ref('whale_alert')
+
+    owner:
+      name: Daniel Weigel
+
+
+
 

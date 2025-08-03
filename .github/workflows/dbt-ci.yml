@@ -1,0 +1,33 @@
+# .github/workflows/dbt-ci.yml
+name: dbt CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  dbt-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.10'
+
+      - name: Install dbt
+        run: |
+          pip install dbt-core==1.9.4 dbt-snowflake==1.9.4
+
+      - name: Install dbt deps
+        run: dbt deps
+
+      - name: Run dbt debug
+        run: dbt debug
+
+      - name: Run dbt
+        run: dbt run
