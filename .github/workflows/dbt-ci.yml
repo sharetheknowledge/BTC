@@ -1,6 +1,6 @@
 # .github/workflows/dbt-ci.yml
 # Secret updated in github
-# New comment 2
+# New comment 3
 name: dbt CI
 
 on:
@@ -11,6 +11,7 @@ on:
 jobs:
   dbt-run:
     runs-on: ubuntu-latest
+    environment: DBT_BTC
 
     steps:
       - name: Checkout repo
