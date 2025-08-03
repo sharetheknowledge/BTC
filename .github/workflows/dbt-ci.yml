@@ -1,5 +1,6 @@
 # .github/workflows/dbt-ci.yml
 # Secret updated in github
+# New comment
 name: dbt CI
 
 on:
