@@ -31,7 +31,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 
 
-on-run-end: "{{ log_dbt_run()}}"
+# on-run-end: "{{ log_dbt_run()}}"
 
 models:
   BTC:
@@ -43,3 +43,4 @@ models:
 query-comment:
   comment: "This was run by dbt"
   append: true
+

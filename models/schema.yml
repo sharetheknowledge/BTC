@@ -13,7 +13,7 @@ models:
     tests:
       - dbt_utils.equal_rowcount:
           compare_model: ref('stg_btc_outputs_py')
-
+  
 
 
 exposures:
