@@ -1,3 +1,4 @@
+
 WITH WHALES as (
 
 select
@@ -14,10 +15,11 @@ order by total_sent desc
 )
 
 select
+'{{ invocation_id }}' as invocation_id,
 w.output_address,
 w.total_sent,
-w.tx_count,
-{{ convert_to_usd('w.total_sent')}} as total_sent_usd
+w.tx_count
+
 from WHALES w
 
 order by total_sent desc
