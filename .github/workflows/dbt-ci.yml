@@ -9,6 +9,8 @@ jobs:
   dbt-run:
     runs-on: ubuntu-latest
     environment: DBT_BTC
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}  # PR vs push
 
     steps:
       - name: Checkout repo
@@ -40,8 +42,8 @@ jobs:
       - name: Install dbt deps
         run: dbt deps
 
-      - name: Run dbt debug
-        run: dbt debug
+      - name: dbt debug
+        run: dbt debug --target "${{ env.DBT_TARGET }}"
 
-      - name: Run dbt
-        run: dbt run
+      - name: dbt run
+        run: dbt run --target "${{ env.DBT_TARGET }}"
