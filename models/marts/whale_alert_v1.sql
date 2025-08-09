@@ -1,4 +1,5 @@
 
+
 WITH WHALES as (
 
 select
